@@ -1,0 +1,5 @@
+{% if postfix_blocked_recipients is defined %}
+{% for addr in postfix_blocked_recipients %}
+{{ addr }}   REJECT
+{% endfor %}
+{% endif %}

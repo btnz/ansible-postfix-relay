@@ -1,0 +1,16 @@
+---
+postfix_packages:
+  - postfix
+
+dkim_packages:
+  - opendkim
+
+postfix_blocked_hosts:
+  - 185.44.107.183
+  - 192.3.26.120
+  - 61.146.79.106
+
+postfix_rbl_clients:
+  - zen.spamhaus.org
+  - bl.spamcop.net
+  - srnblack.surgate.net

@@ -1,0 +1,4 @@
+postfix_conf_dir: /etc/postfix
+postfix_daemon_dir: /var/lib/postfix
+postfix_enable_ipv6: False
+postfix_local_network_relay: False

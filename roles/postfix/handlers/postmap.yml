@@ -1,0 +1,9 @@
+---
+- name: postmap virtual
+  shell: postmap {{ postfix_conf_dir }}/virtual
+
+- name: postmap access
+  shell: postmap {{ postfix_conf_dir }}/access
+
+- name: postmap rbl_client_exceptions
+  shell: postmap {{ postfix_conf_dir }}/rbl_client_exceptions

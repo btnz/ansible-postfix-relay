@@ -1,0 +1,17 @@
+---
+
+- hosts: all
+  sudo: yes
+  vars_files:
+    - "vars/{{ ansible_os_family|lower }}.yml"
+    - vars/defaults.yml
+
+  vars:
+    postfix_relay_domains:
+      - mydomain.com
+
+    postfix_relay_aliases:
+      - { orig_to: "@mydomain.com", relay_to: "my.real.email@gmail.com" }
+
+  roles:
+    - postfix

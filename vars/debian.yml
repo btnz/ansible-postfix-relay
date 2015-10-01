@@ -1,0 +1,6 @@
+---
+postfix_daemon_dir: /usr/lib/postfix
+package_manager: apt
+dkim_packages:
+  - opendkim
+  - opendkim-tools

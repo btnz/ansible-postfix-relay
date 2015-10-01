@@ -1,0 +1,23 @@
+---
+- name: enable postfix service
+  service: name=postfix enabled=yes
+
+- name: install main.cf
+  template: src=main.cf.j2 dest={{ postfix_conf_dir }}/main.cf owner=root group=root mode=0644
+  notify:
+   - restart postfix
+
+- name: configure virtual alias table
+  template: src=virtual.j2 dest={{ postfix_conf_dir}}/virtual owner=root group=root mode=0644
+  notify:
+   - postmap virtual
+
+- name: configure access table
+  template: src=access.j2 dest={{ postfix_conf_dir }}/access owner=root group=root mode=0644
+  notify:
+    - postmap access
+
+- name: configure rbl client exceptions
+  template: src=rbl_client_exceptions.j2 dest={{ postfix_conf_dir }}/rbl_client_exceptions owner=root group=root mode=0644
+  notify:
+    - postmap rbl_client_exceptions

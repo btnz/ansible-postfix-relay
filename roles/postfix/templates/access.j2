@@ -1,0 +1,5 @@
+{% if postfix_blocked_hosts is defined %}
+{% for blocked in postfix_blocked_hosts %}
+{{ blocked }}   REJECT
+{% endfor %}
+{% endif %}

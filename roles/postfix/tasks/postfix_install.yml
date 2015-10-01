@@ -1,0 +1,4 @@
+---
+- name: install postfix package(s)
+  action: "{{ package_manager }} name={{ item }} state=installed"
+  with_items: "{{ postfix_packages }}"

@@ -1,0 +1,4 @@
+---
+- name: install dkim package(s)
+  action: "{{ package_manager }} name={{ item }} state=installed"
+  with_items: "{{ dkim_packages }}"

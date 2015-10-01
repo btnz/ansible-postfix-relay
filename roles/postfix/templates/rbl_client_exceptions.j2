@@ -1,0 +1,5 @@
+{% if postfix_rbl_client_exceptions is defined %}
+{% for exception in postfix_rbl_client_exceptions %}
+{{ exception }}   OK
+{% endfor %}
+{% endif %}

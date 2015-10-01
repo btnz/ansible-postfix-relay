@@ -1,0 +1,7 @@
+---
+- name: install dkim.conf
+  template: src=opendkim.conf.j2 dest=/etc/opendkim.conf owner=root group=root mode=0640
+
+- name: create opendkim directories
+  file: path=/etc/opendkim state=directory
+  file: path=/etc/opendkim/keys state=directory

@@ -1,0 +1,6 @@
+---
+postfix_daemon_dir: /usr/libexec/postfix
+package_manager: yum
+postfix_packages:
+  - postfix
+  - libselinux-python
